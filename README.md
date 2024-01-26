@@ -64,3 +64,11 @@ To get started with Node.js, follow these steps:
     ```
 
 4. Start coding! Create your JavaScript files and leverage the power of Node.js for server-side development.
+
+## Clone the Repository
+
+In the terminal, use the following command:
+
+```bash
+git clone https://github.com/mhdafs/nodejs.git
+```
