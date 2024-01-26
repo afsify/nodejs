@@ -1,0 +1,72 @@
+<%- include('./layout/header.ejs')%>
+
+<div class="p-5">
+    <h1 class="text-3xl font-bold mb-4 text-center">Node.js</h1>
+    <p><strong>Node.js</strong> is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript code on the server side, enabling the development of scalable and high-performance web applications.</p>
+
+    <p class="mt-2"><strong>Key Features and Examples:</strong></p>
+    <ul class="list-disc pl-4">
+        <li>
+            <strong>Event-Driven Architecture:</strong>
+            <p>Node.js is built on an event-driven, non-blocking I/O model, making it efficient for handling concurrent connections and providing high scalability.</p>
+        </li>
+
+        <li>
+            <strong>Package Management with npm:</strong>
+            <p>Node.js comes with npm (Node Package Manager), a powerful tool for managing dependencies and packages in Node.js applications.</p>
+        </li>
+
+        <li>
+            <strong>Asynchronous Programming:</strong>
+            <p>Node.js enables asynchronous programming using features like callbacks and Promises, allowing developers to handle multiple tasks simultaneously without blocking the execution of code.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Example of Asynchronous File Reading
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+        return;
+    }
+    console.log('File content:', data);
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>Server-Side JavaScript:</strong>
+            <p>Node.js allows developers to use JavaScript for both client-side and server-side programming, creating a unified language stack.</p>
+        </li>
+
+        <li>
+            <strong>Community and Ecosystem:</strong>
+            <p>Node.js has a vibrant and active community, providing a vast ecosystem of open-source modules and libraries that can be easily integrated into Node.js applications.</p>
+        </li>
+
+        <li>
+            <strong>Single-Threaded, Event Loop:</strong>
+            <p>Node.js operates on a single-threaded event loop, handling multiple connections concurrently. It utilizes non-blocking I/O operations to maximize efficiency.</p>
+        </li>
+
+        <li>
+            <strong>Streaming Data:</strong>
+            <p>Node.js supports streaming data, which is beneficial for processing large amounts of data efficiently. This is particularly useful for tasks like file processing and real-time communication.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Example of Data Streaming
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) => {
+    const readStream = fs.createReadStream('large-file.txt');
+    readStream.pipe(res);
+});
+
+server.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+            </code></pre>
+        </li>
+    </ul>
+</div>
+
+<%- include('./layout/footer.ejs')%>

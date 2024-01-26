@@ -1,0 +1,104 @@
+<%- include('./layout/header.ejs')%>
+
+<div class="p-5">
+    <h1 class="text-3xl font-bold mb-4 text-center">Express.js</h1>
+    <p><strong>Express.js</strong> is a web application framework for Node.js designed to simplify the process of building robust and scalable web applications. It is minimal, flexible, and unopinionated, allowing developers to structure their applications as they see fit.</p>
+
+    <p class="mt-2"><strong>Major Features and Examples:</strong></p>
+    <ul class="list-disc pl-4">
+        <li>
+            <strong>Routing:</strong>
+            <p>Express provides a simple and effective way to define routes for handling various HTTP methods and URL patterns.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+const express = require('express');
+const app = express();
+
+// Define a route for GET requests to the root URL ('/').
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>Middleware:</strong>
+            <p>Express middleware functions allow you to execute code during the request-response cycle. Useful for tasks like authentication, logging, error handling, etc.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Example middleware to log requests.
+app.use((req, res, next) => {
+    console.log(`Received a ${req.method} request to ${req.url}`);
+    next(); // Pass control to the next middleware or route handler.
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>HTTP Request and Response:</strong>
+            <p>Express simplifies the handling of HTTP requests and responses, providing an easy-to-use interface.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Handling a POST request.
+app.post('/submit', (req, res) => {
+    console.log('Received POST request with data:', req.body);
+    res.send('Data received successfully!');
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>Templating Engines:</strong>
+            <p>Express supports various templating engines like EJS and Pug for rendering dynamic views on the server.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Set EJS as the view engine.
+app.set('view engine', 'ejs');
+
+// Render a dynamic view with data.
+app.get('/dynamic', (req, res) => {
+    res.render('dynamic', { title: 'Express', message: 'Hello!' });
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>Static File Serving:</strong>
+            <p>Express includes middleware for serving static files, such as images, CSS, and JavaScript.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Serve static files from the 'public' directory.
+app.use(express.static('public'));
+            </code></pre>
+        </li>
+        <li>
+            <strong>app.use:</strong>
+            <p>Express middleware is used with <code>app.use</code> to handle tasks during the request-response cycle, such as logging, authentication, or serving static files.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Example middleware to log requests.
+app.use((req, res, next) => {
+    console.log(`Received a ${req.method} request to ${req.url}`);
+    next(); // Pass control to the next middleware or route handler.
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>app.listen:</strong>
+            <p><code>app.listen</code> starts the server and makes it listen on a specified port (in this case, port 3000). It's essential for your Express application to be accessible through HTTP requests.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Start the server, listening on port 3000.
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+            </code></pre>
+        </li>
+
+        <li>
+            <strong>app.set:</strong>
+            <p><code>app.set</code> is used to configure various settings in the Express application. For example, setting the view engine or customizing application-level variables.</p>
+            <pre class="rounded-md md:w-1/2 w-full overflow-y-scroll"><code class="language-javascript">
+// Set EJS as the view engine.
+app.set('view engine', 'ejs');
+            </code></pre>
+        </li>
+    </ul>
+</div>
+
+
+<%- include('./layout/footer.ejs')%>
