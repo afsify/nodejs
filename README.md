@@ -70,5 +70,5 @@ To get started with Node.js, follow these steps:
 In the terminal, use the following command:
 
 ```bash
-git clone https://github.com/mhdafs/nodejs.git
+git clone https://github.com/afsify/nodejs.git
 ```
