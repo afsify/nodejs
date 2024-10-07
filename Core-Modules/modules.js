@@ -18,13 +18,14 @@
 //? 1. Core Modules
 // Node.js comes with several built-in modules that provide essential functionalities
 // such as file system operations,networking, and more.
+{
+  const fs = require("fs");
 
-const fs = require("fs");
-
-fs.readFile("example.txt", "utf8", (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+  fs.readFile("example.txt", "utf8", (err, data) => {
+    if (err) throw err;
+    console.log(data);
+  });
+}
 
 // Common Core Modules:
 // fs: File system operations
@@ -35,7 +36,6 @@ fs.readFile("example.txt", "utf8", (err, data) => {
 
 //? 2. Creating Custom Modules
 // You can create your own modules to encapsulate and reuse code. A module in Node.js is simply a JavaScript file.
-
 {
   math.js(CustomModule);
 
@@ -58,27 +58,29 @@ fs.readFile("example.txt", "utf8", (err, data) => {
 
 //? 3. Exporting and Importing Modules
 // Modules can export values using module.exports or exports, and import them using require.
+{
+  // utility.js:
+  const greet = (name) => {
+    return `Hello, ${name}!`;
+  };
 
-// utility.js:
-const greet = (name) => {
-  return `Hello, ${name}!`;
-};
+  module.exports = greet;
 
-module.exports = greet;
+  // app.js:
+  const greet = require("./utility");
 
-// app.js:
-const greet = require("./utility");
-
-console.log(greet("World")); // Outputs: Hello, World!
+  console.log(greet("World")); // Outputs: Hello, World!
+}
 
 //? 4. Built-in Modules
 // Node.js includes several built-in modules that can be used without installation.
+{
+  const os = require("os");
 
-const os = require("os");
-
-console.log("Operating System:", os.type());
-console.log("Total Memory:", os.totalmem());
-console.log("Free Memory:", os.freemem());
+  console.log("Operating System:", os.type());
+  console.log("Total Memory:", os.totalmem());
+  console.log("Free Memory:", os.freemem());
+}
 
 // Common Built-in Modules:
 // os: Operating system information
@@ -89,11 +91,12 @@ console.log("Free Memory:", os.freemem());
 
 //? 5. Third-Party Modules
 // You can install and use third-party modules from the npm (Node Package Manager) registry.
+{
+  const _ = require("lodash");
 
-const _ = require("lodash");
-
-const numbers = [10, 5, 100, 2, 1000];
-console.log(_.max(numbers)); // Outputs: 1000
+  const numbers = [10, 5, 100, 2, 1000];
+  console.log(_.max(numbers)); // Outputs: 1000
+}
 
 // Installing Third-Party Modules:
 //* npm install lodash
@@ -125,43 +128,46 @@ console.log(add(2, 3)); // Outputs: 5
 
 //? 7. Module Caching
 // Node.js caches modules after the first time they are loaded, improving performance by avoiding redundant loading.
+{
+  // cacheExample.js
+  console.log("Module loaded");
 
-// cacheExample.js
-console.log("Module loaded");
-
-// main.js
-require("./cacheExample"); // Outputs: Module loaded
-require("./cacheExample"); // Does not output anything
+  // main.js
+  require("./cacheExample"); // Outputs: Module loaded
+  require("./cacheExample"); // Does not output anything
+}
 
 //? 8. Global vs Local Modules
 // Modules can be installed globally or locally using npm.
-
-// Local Installation:
-//* npm install lodash
-
-// Global Installation:
-//* npm install -g lodash
+{
+  // Local Installation:
+  //* npm install lodash
+  // Global Installation:
+  //* npm install -g lodash
+}
 
 //? 9. Module Scope
 // Modules in Node.js have their own scope. Variables and functions defined in one module
 // are not accessible in another unless explicitly exported.
+{
+  // moduleA.js:
+  const secret = "secret value";
+  module.exports = { publicValue: "public value" };
 
-// moduleA.js:
-const secret = "secret value";
-module.exports = { publicValue: "public value" };
-
-// app.js:
-const moduleA = require("./moduleA");
-console.log(moduleA.publicValue); // Outputs: public value
-console.log(moduleA.secret); // Outputs: undefined
+  // app.js:
+  const moduleA = require("./moduleA");
+  console.log(moduleA.publicValue); // Outputs: public value
+  console.log(moduleA.secret); // Outputs: undefined
+}
 
 //? 10. Loading Modules
 // Modules are loaded using the require function in CommonJS or the import statement in ES modules.
 // Node.js resolves the module location using a series of steps including checking core modules,
 // relative paths, and node_modules directories.
+{
+  // Relative Path:
+  const myModule = require("./myModule");
 
-// Relative Path:
-const myModule = require("./myModule");
-
-// Node Modules:
-const express = require("express");
+  // Node Modules:
+  const express = require("express");
+}
