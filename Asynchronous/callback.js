@@ -1,6 +1,6 @@
 //! ===================================== Callback in Node.js =====================================
 
-// A **callback** is a function passed into another function as an argument, which is then invoked
+// A callback is a function passed into another function as an argument, which is then invoked
 // inside the outer function to complete some kind of routine or action. In Node.js,
 // callbacks are a common way to handle asynchronous operations. Before Promises and `async/await`became popular,
 // callbacks were the primary method of managing asynchronous code in JavaScript.
@@ -18,7 +18,7 @@
 //? Callback Alternatives (Promises and Async/Await)
 
 //? 1. What is a Callback?
-// A **callback function** is a function that is passed as an argument to another function,
+// A callback function is a function that is passed as an argument to another function,
 // and is called (or executed) after some operation has been completed. In Node.js,
 // callbacks are often used to handle asynchronous operations.
 {

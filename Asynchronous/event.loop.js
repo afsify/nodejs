@@ -26,11 +26,14 @@
 // to occur (such as the completion of a file read), and it handles them by executing corresponding callback functions.
 
 // Key Characteristics:
-//! Single-threaded: Even though Node.js can handle many operations concurrently,
-//! it uses a single main thread to execute JavaScript code.
-//! Non-blocking: The event loop allows the program to continue running even when waiting for I/O operations to complete.
-//! Asynchronous: It processes tasks asynchronously by placing callbacks in an event queue,
-//! which are then executed when the appropriate event occurs.
+//* Single-threaded: Even though Node.js can handle many operations concurrently,
+//* it uses a single main thread to execute JavaScript code.
+
+//* Non-blocking: The event loop allows the program to continue running even when waiting
+//* for I/O operations to complete.
+
+//* Asynchronous: It processes tasks asynchronously by placing callbacks in an event queue,
+//* which are then executed when the appropriate event occurs.
 
 // Basic Diagram of Event Loop:
 ```
@@ -48,12 +51,13 @@
 ```;
 
 //? 2. Call Stack vs Event Loop
-// Call Stack: A stack that tracks the function executions in your program. When a function is called,
-// it gets pushed onto the stack, and when it finishes, it gets popped off. If the stack is empty,
-// the event loop picks up a callback from the queue and executes it.
-// Event Loop: It continuously checks if the call stack is empty and if there are callbacks waiting
-// in the callback queue. If the stack is empty, the event loop moves the callbacks from the queue
-// to the stack to be executed.
+//* Call Stack: A stack that tracks the function executions in your program. When a function is called,
+//* it gets pushed onto the stack, and when it finishes, it gets popped off. If the stack is empty,
+//* the event loop picks up a callback from the queue and executes it.
+
+//* Event Loop: It continuously checks if the call stack is empty and if there are callbacks waiting
+//* in the callback queue. If the stack is empty, the event loop moves the callbacks from the queue
+//* to the stack to be executed.
 {
   console.log("Start");
 
@@ -75,12 +79,12 @@
 //? 3. Phases of the Event Loop
 // The event loop has multiple phases, and each phase has a specific purpose. Here’s a breakdown:
 
-//! Timers Phase: This phase executes callbacks for `setTimeout()` and `setInterval()`.
-//! Pending Callbacks Phase: Executes I/O callbacks that are deferred, such as errors from I/O operations.
-//! Idle, Prepare Phase: Internal use only.
-//! Poll Phase: Retrieves new I/O events and executes I/O-related callbacks (except for timers and close events).
-//! Check Phase: Executes `setImmediate()` callbacks.
-//! Close Callbacks Phase: Executes callbacks for closed connections, like `socket.on('close', ...)`.
+//* Timers Phase: This phase executes callbacks for `setTimeout()` and `setInterval()`.
+//* Pending Callbacks Phase: Executes I/O callbacks that are deferred, such as errors from I/O operations.
+//* Idle, Prepare Phase: Internal use only.
+//* Poll Phase: Retrieves new I/O events and executes I/O-related callbacks (except for timers and close events).
+//* Check Phase: Executes `setImmediate()` callbacks.
+//* Close Callbacks Phase: Executes callbacks for closed connections, like `socket.on('close', ...)`.
 
 // Each phase processes its own type of callbacks, and then the event loop moves on to the next phase.
 
@@ -118,18 +122,21 @@
 // The I/O operation (`readFile`) is asynchronous and its callback is executed once the file reading is complete.
 
 //? 6. Idle, Poll, and Check Phases
-// Idle Phase: Reserved for internal operations.
-// Poll Phase: The poll phase is where the event loop checks for new I/O events.
-// If no timer is scheduled and no I/O is pending, the event loop will stay in this phase.
-// Check Phase: This phase is responsible for processing `setImmediate()` callbacks,
-// which are executed after the poll phase is complete.
+//* Idle Phase: Reserved for internal operations.
+
+//* Poll Phase: The poll phase is where the event loop checks for new I/O events.
+//* If no timer is scheduled and no I/O is pending, the event loop will stay in this phase.
+
+//* Check Phase: This phase is responsible for processing `setImmediate()` callbacks,
+//* which are executed after the poll phase is complete.
 
 //? 7. Microtasks (process.nextTick and Promises)
 // Microtasks are a separate queue of tasks that must be executed before the next event loop iteration.
 // The two main ways to queue microtasks are `process.nextTick()` and Promises.
-// `process.nextTick()`: It places a callback in the next iteration of the event loop, even before I/O callbacks.
-// Promise resolution/rejection: When a Promise is resolved or rejected, its `.then()` or `.catch()`
-// handlers are added to the microtask queue.
+//* `process.nextTick()`: It places a callback in the next iteration of the event loop, even before I/O callbacks.
+
+//* Promise resolution/rejection: When a Promise is resolved or rejected, its `.then()` or `.catch()`
+//* handlers are added to the microtask queue.
 {
   // Example (process.nextTick):
   console.log("Start");

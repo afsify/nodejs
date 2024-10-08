@@ -21,8 +21,8 @@
 // `async` and `await` provide a way to work with asynchronous code more cleanly. They are syntactic
 // sugar over Promises and allow writing asynchronous code that looks and behaves more like synchronous code.
 
-// `async`: Declares a function as asynchronous.
-// `await`: Pauses the execution of an async function until the Promise is resolved or rejected.
+//* `async`: Declares a function as asynchronous.
+//* `await`: Pauses the execution of an async function until the Promise is resolved or rejected.
 {
   async function fetchData() {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
