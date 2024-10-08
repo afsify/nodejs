@@ -17,9 +17,8 @@
 
 //? 1. Reading Files
 // You can read files using fs.readFile for asynchronous reading and fs.readFileSync for synchronous reading.
-
-// Asynchronous Reading:
 {
+  // Asynchronous Reading:
   const fs = require("fs");
 
   fs.readFile("example.txt", "utf8", (err, data) => {
@@ -31,8 +30,8 @@
   });
 }
 
-// Synchronous Reading:
 {
+  // Synchronous Reading:
   const fs = require("fs");
 
   try {
@@ -45,9 +44,8 @@
 
 //? 2. Writing Files
 // You can write to files using fs.writeFile for asynchronous writing and fs.writeFileSync for synchronous writing.
-
-// Asynchronous Writing:
 {
+  // Asynchronous Writing:
   const fs = require("fs");
 
   const content = "Hello, World!";
@@ -61,8 +59,8 @@
   });
 }
 
-// Synchronous Writing:
 {
+  // Synchronous Writing:
   const fs = require("fs");
 
   const content = "Hello, World!";
@@ -77,9 +75,8 @@
 
 //? 3. Appending to Files
 // To append content to a file, use fs.appendFile or fs.appendFileSync.
-
-// Asynchronous Appending:
 {
+  // Asynchronous Appending:
   const fs = require("fs");
 
   const content = "\nAppended Content";
@@ -93,8 +90,8 @@
   });
 }
 
-// Synchronous Appending:
 {
+  // Synchronous Appending:
   const fs = require("fs");
 
   const content = "\nAppended Content";
@@ -109,9 +106,8 @@
 
 //? 4. Deleting Files
 // You can delete files using fs.unlink for asynchronous deletion and fs.unlinkSync for synchronous deletion.
-
-// Asynchronous Deletion:
 {
+  // Asynchronous Deletion:
   const fs = require("fs");
 
   fs.unlink("example.txt", (err) => {
@@ -123,8 +119,8 @@
   });
 }
 
-// Synchronous Deletion:
 {
+  // Synchronous Deletion:
   const fs = require("fs");
 
   try {
@@ -137,9 +133,8 @@
 
 //? 5. Renaming Files
 // To rename files, use fs.rename for asynchronous renaming and fs.renameSync for synchronous renaming.
-
-// Asynchronous Renaming:
 {
+  // Asynchronous Renaming:
   const fs = require("fs");
 
   fs.rename("oldname.txt", "newname.txt", (err) => {
@@ -151,8 +146,8 @@
   });
 }
 
-// Synchronous Renaming:
 {
+  // Synchronous Renaming:
   const fs = require("fs");
 
   try {
@@ -165,9 +160,8 @@
 
 //? 6. Creating Directories
 // You can create directories using fs.mkdir for asynchronous creation and fs.mkdirSync for synchronous creation.
-
-// Asynchronous Directory Creation:
 {
+  // Asynchronous Directory Creation:
   const fs = require("fs");
 
   fs.mkdir("exampleDir", (err) => {
@@ -179,8 +173,8 @@
   });
 }
 
-// Synchronous Directory Creation:
 {
+  // Synchronous Directory Creation:
   const fs = require("fs");
 
   try {
@@ -194,9 +188,8 @@
 //? 7. Reading Directories
 // To read the contents of a directory, use fs.readdir for asynchronous reading and
 // fs.readdirSync for synchronous reading.
-
-// Asynchronous Directory Reading:
 {
+  // Asynchronous Directory Reading:
   const fs = require("fs");
 
   fs.readdir("exampleDir", (err, files) => {
@@ -208,8 +201,8 @@
   });
 }
 
-// Synchronous Directory Reading:
 {
+  // Synchronous Directory Reading:
   const fs = require("fs");
 
   try {
@@ -222,9 +215,8 @@
 
 //? 8. Removing Directories
 // To remove directories, use fs.rmdir for asynchronous removal and fs.rmdirSync for synchronous removal.
-
-// Asynchronous Directory Removal:
 {
+  // Asynchronous Directory Removal:
   const fs = require("fs");
 
   fs.rmdir("exampleDir", (err) => {
@@ -236,8 +228,8 @@
   });
 }
 
-// Synchronous Directory Removal:
 {
+  // Synchronous Directory Removal:
   const fs = require("fs");
 
   try {
@@ -260,9 +252,8 @@
 
 //? 10. File Properties
 // To get information about a file, use fs.stat for asynchronous calls and fs.statSync for synchronous calls.
-
-// Asynchronous File Properties:
 {
+  // Asynchronous File Properties:
   const fs = require("fs");
 
   fs.stat("example.txt", (err, stats) => {
@@ -274,8 +265,8 @@
   });
 }
 
-// Synchronous File Properties:
 {
+  // Synchronous File Properties:
   const fs = require("fs");
 
   try {

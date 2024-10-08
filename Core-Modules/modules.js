@@ -28,11 +28,11 @@
 }
 
 // Common Core Modules:
-// fs: File system operations
-// http: HTTP server and client
-// path: Utilities for working with file and directory paths
-// events: Event-driven programming
-// util: Utilities for various tasks
+//* fs: File system operations
+//* http: HTTP server and client
+//* path: Utilities for working with file and directory paths
+//* events: Event-driven programming
+//* util: Utilities for various tasks
 
 //? 2. Creating Custom Modules
 // You can create your own modules to encapsulate and reuse code. A module in Node.js is simply a JavaScript file.
@@ -83,11 +83,11 @@
 }
 
 // Common Built-in Modules:
-// os: Operating system information
-// crypto: Cryptographic functionalities
-// buffer: Binary data handling
-// stream: Stream handling
-// zlib: Compression and decompression
+//* os: Operating system information
+//* crypto: Cryptographic functionalities
+//* buffer: Binary data handling
+//* stream: Stream handling
+//* zlib: Compression and decompression
 
 //? 5. Third-Party Modules
 // You can install and use third-party modules from the npm (Node Package Manager) registry.

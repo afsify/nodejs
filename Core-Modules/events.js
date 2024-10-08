@@ -76,9 +76,8 @@
 
 //? 6. Removing Listeners
 // You can remove listeners using the removeListener or removeAllListeners methods.
-
-// Removing a Specific Listener:
 {
+  // Removing a Specific Listener:
   const EventEmitter = require("events");
   const myEmitter = new EventEmitter();
 
@@ -92,8 +91,8 @@
   myEmitter.emit("event"); // No output, listener removed
 }
 
-// Removing All Listeners:
 {
+  // Removing All Listeners:
   const EventEmitter = require("events");
   const myEmitter = new EventEmitter();
 
@@ -143,9 +142,8 @@
 
 //? 9. Asynchronous vs Synchronous Events
 // Event listeners in Node.js are synchronous by default. However, you can execute asynchronous code inside listeners.
-
-// Synchronous Event:
 {
+  // Synchronous Event:
   const EventEmitter = require("events");
   const myEmitter = new EventEmitter();
 
@@ -157,8 +155,8 @@
   console.log("This will run after the event listener");
 }
 
-// Asynchronous Event:
 {
+  // Asynchronous Event:
   const EventEmitter = require("events");
   const myEmitter = new EventEmitter();
 
