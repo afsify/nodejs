@@ -39,9 +39,8 @@
 
 // Starting the Debugger:
 // Run the following command to start your application in debug mode:
-```bash
-node inspect app.js
-```;
+
+//! node inspect app.js
 
 // - Commands:
 //! - `n`: Step to the next line of code.
@@ -59,9 +58,10 @@ node inspect app.js
 }
 
 // Run in debug mode:
-```bash
-node inspect app.js
-```// This will pause at the first line of code. You can then step through the code or inspect variables.
+
+//! node inspect app.js
+
+// This will pause at the first line of code. You can then step through the code or inspect variables.
 
 //? 3. Using Chrome DevTools for Debugging
 // You can use Chrome DevTools to debug Node.js applications, providing a visual interface for setting breakpoints,
@@ -69,15 +69,16 @@ node inspect app.js
 
 // Steps:
 //! 1. Run your Node.js application with the `--inspect` flag:
-```bash
-node --inspect app.js
-```//! 2. Open Chrome and go to `chrome://inspect`.
+
+//! node --inspect app.js
+
+//! 2. Open Chrome and go to `chrome://inspect`.
 //! 3. Click on "Open dedicated DevTools for Node."
 //! 4. This will open Chrome DevTools, allowing you to inspect, set breakpoints, and step through your Node.js code.
 
-```bash
-node --inspect-brk app.js
-```// This command will start the app in debugging mode and pause at the first line of execution until you attach DevTools.
+//! node --inspect-brk app.js
+
+// This command will start the app in debugging mode and pause at the first line of execution until you attach DevTools.
 
 //? 4. Using VSCode Debugger
 // Visual Studio Code (VSCode) has built-in debugging support for Node.js, which allows you to debug your
@@ -91,28 +92,31 @@ node --inspect-brk app.js
 //! 5. Press F5 or click the "Start Debugging" button to start debugging.
 
 // Example launch.json:
-```json
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/app.js"
-    }
-  ]
+  // {
+  //   "version": "0.2.0",
+  //   "configurations": [
+  //     {
+  //       "type": "node",
+  //       "request": "launch",
+  //       "name": "Launch Program",
+  //       "program": "${workspaceFolder}/app.js"
+  //     }
+  //   ]
+  // }
 }
-```// You can then run the app in debug mode and step through code in VSCode.
+
+// You can then run the app in debug mode and step through code in VSCode.
 
 //? 5. Using `node-inspect`
 // `node-inspect` is a simple command-line debugging tool that provides a REPL interface for inspecting Node.js code.
 
 // Steps:
 //! 1. Run the following command to start debugging:
-```bash
-node inspect app.js
-```//! 2. This will launch an interactive debugging session, similar to the built-in Node.js debugger but with a simpler interface.
+
+//! node inspect app.js
+
+//! 2. This will launch an interactive debugging session, similar to the built-in Node.js debugger but with a simpler interface.
 
 //! 3. Use commands like `n`, `c`, `s`, and `o` to step through code and inspect variables.
 
@@ -121,74 +125,78 @@ node inspect app.js
 
 // - **Debugger libraries**:
 //   - `debug`: A lightweight debugging utility that helps organize debug logs.
-```bash
-npm install debug
-``````js
-const debug = require('debug')('app');
 
-function add(a, b) {
-  debug('Adding:', a, b);
-  return a + b;
+//! npm install debug
+{
+  const debug = require("debug")("app");
+
+  function add(a, b) {
+    debug("Adding:", a, b);
+    return a + b;
+  }
+
+  add(5, 10);
 }
 
-add(5, 10);
-```// Run the app with:
+// Run the app with:
 
-```bash
-DEBUG=app node app.js
-```// - nsolid: Provides advanced monitoring and debugging for Node.js applications.
+//! DEBUG=app node app.js
+
+// - nsolid: Provides advanced monitoring and debugging for Node.js applications.
 
 //? 7. Error Stack Traces
 // Node.js automatically provides stack traces when an error occurs. The stack trace helps locate the
 // source of an error by showing the call stack leading to it.
-
-```js
-function divide(a, b) {
-  if (b === 0) {
-    throw new Error('Cannot divide by zero');
+{
+  function divide(a, b) {
+    if (b === 0) {
+      throw new Error("Cannot divide by zero");
+    }
+    return a / b;
   }
-  return a / b;
+
+  try {
+    divide(5, 0);
+  } catch (error) {
+    console.error(error.stack);
+  }
+
+  // Output:
+  // Error: Cannot divide by zero
+  //     at divide (/path/to/app.js:3:11)
+  //     at Object.<anonymous> (/path/to/app.js:7:3)
 }
 
-try {
-  divide(5, 0);
-} catch (error) {
-  console.error(error.stack);
-}
-```;
-
-Output: ```
-Error: Cannot divide by zero
-    at divide (/path/to/app.js:3:11)
-    at Object.<anonymous> (/path/to/app.js:7:3)
-```// The stack trace shows the line number and file where the error occurred.
+// The stack trace shows the line number and file where the error occurred.
 
 //? 8. Debugging Asynchronous Code
 // Asynchronous code in Node.js can be harder to debug because of non-blocking behavior.
 // You can handle errors using callbacks, promises, or `async/await` to properly capture and debug them.
+{
+  // Example with Promises:
+  function fetchData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => reject(new Error("Data fetch failed")), 1000);
+    });
+  }
 
-// Example with Promises:
-```js
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => reject(new Error('Data fetch failed')), 1000);
-  });
+  fetchData()
+    .then((data) => console.log(data))
+    .catch((err) => console.error("Error:", err));
 }
 
-fetchData()
-  .then(data => console.log(data))
-  .catch(err => console.error('Error:', err));
-```// Debugging async/await:
-
-```js
-async function fetchData() {
-  try {
-    await someAsyncOperation();
-  } catch (err) {
-    console.error('Error:', err);
+{
+  // Debugging async/await:
+  async function fetchData() {
+    try {
+      await someAsyncOperation();
+    } catch (err) {
+      console.error("Error:", err);
+    }
   }
 }
-```// Errors will be caught and logged properly in both cases.
+
+// Errors will be caught and logged properly in both cases.
 
 //? 9. Debugging Memory Leaks
 // Node.js provides a `--inspect` flag for memory profiling and debugging memory leaks.
@@ -196,9 +204,8 @@ async function fetchData() {
 
 // Steps to Analyze Memory:
 //! 1. Run your app with the inspect flag:
-```bash
-node --inspect app.js
-```;
+
+//! node --inspect app.js
 
 //! 2. Open Chrome DevTools and use the memory tab to take heap snapshots.
 //! 3. Analyze memory usage and look for objects that are not being garbage collected.
@@ -211,7 +218,9 @@ node --inspect app.js
 //* - Monitor performance: Use tools like **clinic.js** and **Node.js Profiler** for performance-related debugging.
 
 //? Summary of Debugging in Node.js
-// Node.js provides a range of built-in tools for debugging, from simple `console.log()` to powerful debuggers like Chrome DevTools and VSCode. In addition, third-party tools like `debug` and **profiler tools** can help diagnose issues in production applications.
+// Node.js provides a range of built-in tools for debugging, from simple `console.log()` to powerful
+// debuggers like Chrome DevTools and VSCode. In addition, third-party tools like `debug` and **profiler tools**
+// can help diagnose issues in production applications.
 
 //* - Console logging: Useful for quick debugging but not scalable.
 //* - Node.js Debugger: Allows you to step through code and inspect variables.
