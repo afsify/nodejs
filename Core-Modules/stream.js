@@ -1,6 +1,8 @@
 //! ========================================= Streams in Node.js =========================================
 
-// Streams are a fundamental concept in Node.js that allow you to work with large amounts of data in an efficient way. Streams are instances of EventEmitter and allow you to read data from a source or write data to a destination in a continuous manner.
+// Streams are a fundamental concept in Node.js that allow you to work with large amounts of data in an
+// efficient way. Streams are instances of EventEmitter and allow you to read data from a source or write
+// data to a destination in a continuous manner.
 
 // Subtopics and Details:
 //? Types of Streams
