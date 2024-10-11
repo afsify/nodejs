@@ -8,16 +8,16 @@
 // for other SQL databases.
 
 // Subtopics and Details:
-//* Installing Dependencies
-//* Connecting to MySQL Database
-//* Understanding the Connection Configuration
-//* Performing CRUD Operations
-//* Using Prepared Statements
-//* Connection Pooling
-//* Handling Transactions
-//* Error Handling
-//* Using Promises or Async/Await with SQL Queries
-//* Connecting to Cloud SQL Databases
+//? Installing Dependencies
+//? Connecting to MySQL Database
+//? Understanding the Connection Configuration
+//? Performing CRUD Operations
+//? Using Prepared Statements
+//? Connection Pooling
+//? Handling Transactions
+//? Error Handling
+//? Using Promises or Async/Await with SQL Queries
+//? Connecting to Cloud SQL Databases
 
 //? 1. Installing Dependencies
 // You need to install the MySQL driver package (`mysql2`) to connect your Node.js application to a MySQL database.
