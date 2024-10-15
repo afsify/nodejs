@@ -7,7 +7,6 @@
 // (operation successful) or rejected (operation failed).
 
 // Subtopics and Details:
-
 //? What is a Promise?
 //? States of a Promise
 //? Creating a Promise

@@ -6,7 +6,6 @@
 // callbacks were the primary method of managing asynchronous code in JavaScript.
 
 // Subtopics and Details:
-
 //? What is a Callback?
 //? Synchronous vs Asynchronous Callbacks
 //? Error-First Callbacks

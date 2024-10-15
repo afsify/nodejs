@@ -7,7 +7,6 @@
 // efficiently without blocking.
 
 // Subtopics and Details:
-
 //? What is the Event Loop?
 //? Call Stack vs Event Loop
 //? Phases of the Event Loop

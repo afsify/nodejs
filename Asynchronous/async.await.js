@@ -5,7 +5,6 @@
 // asynchronous code in a synchronous style, avoiding the complexities of callbacks and `.then()` chains.
 
 // Subtopics and Details:
-
 //? What is Async/Await?
 //? Async Functions
 //? Await Keyword
