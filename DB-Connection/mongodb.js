@@ -1,4 +1,4 @@
-//! ================================ MongoDB Database Connection in Node.js ================================
+//! ================================= MongoDB Database Connection in Node.js =================================
 
 // Connecting a Node.js application to a MongoDB database allows you to interact with the database by performing
 // CRUD (Create, Read, Update, Delete) operations. In Node.js, the most popular library for MongoDB interactions
