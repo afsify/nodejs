@@ -1,0 +1,18 @@
+{
+  "name": "workouts",
+  "version": "1.0.0",
+  "description": "Node.js basic simple practices",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "afsify",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^2.0.4",
+    "workouts": "file:"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
